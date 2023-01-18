@@ -1,0 +1,40 @@
+## OS X
+**/.DS_Store
+
+
+## Visual studio
+.vs/
+
+**/bin/
+
+**/obj/
+
+/**/*.user
+
+
+## VS code
+/**/.vscode/
+
+/**/*.code-workspace
+
+
+## Node
+/**/node_modules
+
+
+## Resharper
+*.DotSettings
+
+
+## Jetbrains/Rider
+**/.idea/
+
+**/.run/*
+
+!tools/.run/*
+
+
+# Binaries
+/**/*.dll
+
+/**/*.pdb

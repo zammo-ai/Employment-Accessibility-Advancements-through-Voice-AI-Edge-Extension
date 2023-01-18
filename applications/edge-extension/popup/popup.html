@@ -1,0 +1,151 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Job Application Assistant</title>
+  <style>
+    body {
+      width: 375px;
+      height: 100vh;
+    }
+
+    #notification {
+      display: none;
+    }
+
+    #webchat-id-form {
+      margin-top: 5%;
+      padding-left: 5%;
+      padding-right: 5%;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    #webchat-id-form input {
+      height: 30px;
+      border: 1px solid #ccc;
+      padding: 5px;
+      margin-bottom: 2%;
+      margin-top: 2%;
+    }
+
+    #webchat-id-form button {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+    }
+
+    #webchat-id-form button:hover {
+      background-color: #45a049;
+    }
+
+  /*
+    See https://codepen.io/walesmd/pen/ZEEMLg for the original code.
+  */
+  .notice {
+    position: relative;
+    margin: 1em;
+    background: #F9F9F9;
+    padding: 1em 1em 1em 2em;
+    border-left: 4px solid #DDD;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125);
+  }
+
+  .notice:before {
+    position: absolute;
+    top: 50%;
+    margin-top: -17px;
+    left: -17px;
+    background-color: #DDD;
+    color: #FFF;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+    font-family: Georgia;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+  }
+
+  .info {
+    border-color: #0074D9;
+  }
+
+  .info:before {
+    content: "i";
+    background-color: #0074D9;
+  }
+
+  .success {
+    border-color: #2ECC40;
+  }
+
+  .success:before {
+    content: "√";
+    background-color: #2ECC40;
+  }
+
+  .warning {
+    border-color: #FFDC00;
+  }
+
+  .warning:before {
+    content: "!";
+    background-color: #FFDC00;
+  }
+
+  .error {
+    border-color: #FF4136;
+  }
+
+  .error:before {
+    content: "X";
+    background-color: #FF4136;
+  }
+  </style>
+
+<link rel="stylesheet" href="../lib/css/montserrat.css">
+<link rel="stylesheet" href="../lib/css/material-icons.css">
+  <link rel="stylesheet" href="../lib/css/material-components-web-7.0.0.min.css">
+  <link rel="stylesheet" href="../lib/css/zammo-bot-ui-kit-0.6.12.min.css">
+
+</head>
+
+<body>
+  <script src="../lib/js/axios-0.27.2.min.js"></script>
+  <script src="../lib/js/markdown-it-12.2.0.min.js"></script>
+  <script src="../lib/js/adaptivecards-2.10.0.min.js"></script>
+  <script src="../lib/js/microsoft.cognitiveservices.speech.sdk-1.22.0.bundle-min.js"></script>
+
+  <div id="notification" class="notice"></div>
+  <div id="webchat-id-form">
+    <label>Please enter the webchat ID or simulator token from your Zammo business:</label>
+    <input value="" type="text"></input>
+    <button>Submit</button>
+  </div>
+
+  <script
+    id="ZammoBotUIKitScript"
+    src="../lib/js/zammo-bot-ui-kit-0.6.12.min.js"
+    cssUrl="https://cdn.zammo.ai/zammo-bot-ui-kit/zammo-bot-ui-kit-latest.min.css"
+    zammoApiBaseUrl="https://app.zammo.ai"
+    unbranded
+    stickyChat="true"
+    webChatId=""
+    shouldLoadDependencies="false"
+    environment="development"
+    executionType="controlled"
+    shouldShowMicrophone="true"
+    shouldAllowUserToDownloadTranscript="true"></script>
+
+  <script src="js/popup.js"></script>
+  <script src="js/zammo-bot-ui-kit.extensions.job-advisor.js"></script>
+</body>
+
+</html>

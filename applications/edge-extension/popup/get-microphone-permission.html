@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Microphone permission</title>
+  <style>
+    #microphone-permission-status {
+      text-transform: uppercase;
+      color: #1976D2;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Permission request</h1>
+  <p>In order to use the microphone, you will need to allow the extension to do so.</p>
+  <p>When prompted you can allow the microphone or use the browser microphone icon to configure the permission.</p>
+
+  <p>The permission is currently: <span id="microphone-permission-status"></span></p>
+
+  <h2>Remove the permissions</h2>
+  <p>If you change your mind, use the contextual menu on the chatbot and select microphone.</p>
+  <p>On this page, use your browser microphone icon to remove the permission.</p>
+  <p>As a reminder, you will not be able to use the microphone afterwards.</p>
+
+  <h2>What happen to your audio data?</h2>
+  <p>When you interact with your voice on the chatbot, the sample is sent to our <a href="https://learn.microsoft.com/en-us/legal/cognitive-services/speech-service/speech-to-text/data-privacy-security#how-does-speech-to-text-process-data" target="_blank">Microsoft Speech To Text</a> instance for transcription.</p>
+  <p>The samples are not recorded or kept for any purposes.</p>
+</body>
+<script src="js/get-microphone-permission.js"></script>
+
+</html>
